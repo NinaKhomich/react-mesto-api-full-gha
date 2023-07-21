@@ -1,0 +1,14 @@
+.header__nav_opened::after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: rgba(84, 84, 84, .7);
+  position: absolute;
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav_opened::after {
+    display: none;
+  }
+}

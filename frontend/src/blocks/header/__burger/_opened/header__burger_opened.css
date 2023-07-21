@@ -1,0 +1,8 @@
+.header__burger_opened:before{
+  transform: translateY(8px) rotateZ(45deg);
+}
+
+.header__burger_opened:after {
+  transform: translateY(-8px) rotateZ(-45deg);
+  top: 17px;
+}

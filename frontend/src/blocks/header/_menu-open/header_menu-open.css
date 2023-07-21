@@ -1,0 +1,9 @@
+.header_menu-open {
+margin-top: 141px;
+}
+
+@media screen and (min-width: 768px) {
+  .header_menu-open {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,12 @@
+.main {
+  margin: 42px auto 0;
+  padding: 0 19px;
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    padding: 0;
+    margin-top: 41px;
+    max-width: 880px;
+  }
+}

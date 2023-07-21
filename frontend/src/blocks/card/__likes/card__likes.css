@@ -1,0 +1,6 @@
+.card__likes {
+  grid-area: like;
+  justify-self: end;
+  margin-right: 21px;
+  text-align: center;
+}

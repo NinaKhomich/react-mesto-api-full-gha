@@ -1,0 +1,13 @@
+.sign__logged {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .sign__logged {
+    margin-top: 15px;
+  }
+}

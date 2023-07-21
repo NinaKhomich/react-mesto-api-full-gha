@@ -1,0 +1,14 @@
+.card {
+  position: relative;
+  border-radius: 10px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-template-areas: 
+  'pic pic'
+  'title like';
+  align-items: center;
+  row-gap: 24px;
+  padding-bottom: 17px;
+  column-gap: 10px;
+}

@@ -1,0 +1,6 @@
+.card__likes-number {
+  display: block;
+  color: #000;
+  font-size: 13px;
+  line-height: 16px;
+}

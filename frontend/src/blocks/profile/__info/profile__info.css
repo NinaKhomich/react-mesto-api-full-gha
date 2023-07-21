@@ -1,0 +1,20 @@
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "subtitle subtitle";
+  align-items: center;
+  text-align: center;
+  margin-top: 26px;
+  margin-bottom: 33px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__info {
+    max-width: 336px;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }  
+}

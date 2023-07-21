@@ -1,0 +1,21 @@
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: -142px;
+  left: 0;
+  width: 100%;
+  padding-top: 42px;
+  padding-bottom: 39px;
+  background-color: #000;;
+}
+
+@media screen and (min-width: 768px) {
+  .header__nav {
+    position: static;
+    flex-direction: row;
+    width: unset;
+    padding: 0;
+  }
+}

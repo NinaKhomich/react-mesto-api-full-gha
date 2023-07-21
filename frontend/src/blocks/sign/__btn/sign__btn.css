@@ -1,0 +1,19 @@
+.sign__btn {
+  width: 100%;
+  max-width: 358px;
+  height: 46px;
+  background-color: #fff;
+  border-radius: 2px;
+  border: none;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .sign__btn {
+    height: 50px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+}
