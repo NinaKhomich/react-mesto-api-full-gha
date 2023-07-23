@@ -92,7 +92,14 @@ const login = (req, res, next) => {
         NODE_ENV === 'production' ? SECRET_KEY : 'dev-secret',
         { expiresIn: '7d' },
       );
-      res.cookie('jwt', token, { httpOnly: true }).send({ token });
+      res
+        .cookie('jwt', token, {
+          maxAge: 360000 * 24 * 7,
+          httpOnly: true,
+          sameSite: 'none',
+          secure: true,
+        })
+        .send({ token });
     })
     .catch(next);
 };
