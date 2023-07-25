@@ -4,6 +4,7 @@ class Api {
   constructor({link, headers}) {
     this._link = link;
     this._headers = headers;
+    this._headers.authorization = `Bearer ${localStorage.getItem('jwt')}`
   }
 
   _checkResult(res) {
@@ -16,6 +17,7 @@ class Api {
 
   async setProfileInfo() {
     const res = await fetch(`${this._link}users/me`, {
+      method: 'GET',
       headers: this._headers
     });
     return this._checkResult(res);
@@ -46,7 +48,8 @@ class Api {
 
   getInitialCards() {
     return fetch(`${this._link}cards`, {
-      headers: this._headers
+      method: 'GET',
+      headers: this._headers,
     })
     .then(res => this._checkResult(res));
   }

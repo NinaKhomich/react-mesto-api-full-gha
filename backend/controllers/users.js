@@ -96,8 +96,8 @@ const login = (req, res, next) => {
         .cookie('jwt', token, {
           maxAge: 360000 * 24 * 7,
           httpOnly: true,
-          sameSite: 'none',
-          secure: true,
+          sameSite: 'strict',
+          // secure: false,
         })
         .send({ token });
     })
@@ -112,7 +112,7 @@ const userToUpdate = (body, req, res, next) => {
   )
     .then((user) => {
       if (!user) throw new NotFoundError('Пользователь не найден');
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err instanceof ValidationError) {

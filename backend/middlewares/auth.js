@@ -6,26 +6,26 @@ const Unauthorized = require('../utils/errors/Unauthorized');
 
 const auth = (req, res, next) => {
   // достаём авторизационный заголовок
-  const { authorization } = req.headers;
+  const authorizationToken = req.headers.authorization;
 
   // убеждаемся, что он есть или начинается с Bearer
-  if (!authorization || !authorization.startsWith('Bearer ')) {
-    next(new Unauthorized('Необходима авторизация'));
+  if (!authorizationToken || !authorizationToken.startsWith('Bearer ')) {
+    return next(new Unauthorized('Необходима авторизация'));
   }
 
   // извлечём токен
-  const token = authorization.replace('Bearer ', '');
+  const token = authorizationToken.replace('Bearer ', '');
   let payload;
 
   // верифицируем токен
   try {
     payload = jwt.verify(token, NODE_ENV === 'production' ? SECRET_KEY : 'dev-secret');
   } catch (err) {
-    next(new Unauthorized('Необходима авторизация'));
+    return next(new Unauthorized('Необходима авторизация'));
   }
 
   req.user = payload; // записываем пейлоуд в объект запроса
-  next(); // пропускаем запрос дальше
+  return next(); // пропускаем запрос дальше
 };
 
 module.exports = auth;

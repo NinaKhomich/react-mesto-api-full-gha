@@ -54,7 +54,7 @@ const cardToUpdate = (body, req, res, next) => {
   )
     .then((card) => {
       if (!card) throw new NotFoundError('Карточка не найдена');
-      res.send({ data: card });
+      res.send(card);
     })
     .catch((err) => {
       if (err instanceof CastError) {
